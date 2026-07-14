@@ -2,7 +2,7 @@ import http from "http";
 
 const server = http.createServer((req, res) => {
   console.log("request event");
-  res.end("Connected Successfully!");
+  res.end("Hello World");
 });
 
 server.listen(5000, () => {
