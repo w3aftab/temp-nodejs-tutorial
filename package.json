@@ -7,8 +7,7 @@
   "type": "module",
   "main": "1-intro.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
