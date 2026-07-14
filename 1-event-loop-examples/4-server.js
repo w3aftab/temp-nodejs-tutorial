@@ -1,10 +1,22 @@
 import http from "http";
 
 const server = http.createServer((req, res) => {
-  console.log("request event");
-  res.end("Hello World");
+  if (req.url === "/") {
+    res.end("Home Page");
+  } else if (req.url === "/about") {
+    // BLOCKING CODE !!!!
+    for (let i = 0; i < 1000; i++) {
+      for (let j = 0; j < 1000; i++) {
+        console.log(`${i}-${j}`);
+      }
+    }
+    res.end("About Page");
+  } else {
+    res.end("Error Page");
+  }
+  res.end();
 });
 
 server.listen(5000, () => {
-  console.log("Server listening on port : 5000....");
+  console.log("Server is listening on port 5000...");
 });
